@@ -1,0 +1,103 @@
+
+.banner img{
+    width: 100%;
+    vertical-align: middle;
+}
+
+.channel-list{
+    /* margin-top: 30px; */
+    color: #272727;
+}
+.location{
+    padding: 12px 0;
+    font-size: 18px;
+}
+.location a:hover{
+    color: #CF0410;
+
+}
+.aside{ 
+    float: left;
+    width: 20%;
+}
+.aside-head{
+    box-sizing: border-box;
+    padding: 6px 25px;
+    width: 100%;
+    height: 48px;
+    background: #CF0410;
+    font-size: 24px;
+    color: white;
+}
+.aside-body{
+    height: 500px;
+    background: #F5F5F5;
+    background: url('../images/aside-back.png') no-repeat;
+    background-size: cover;
+    background-position-y:bottom;
+}
+.aside-body li{
+    box-sizing: border-box;
+    padding: 8px 25px;
+    width: 100%;
+    height: 36px;
+    border: 1px solid #C9C9C9;
+    border-top: unset;
+    background: #F5F5F5;
+    color: #272727;
+    font-size: 14px;
+}
+.aside-current,.aside-body li:hover{
+    color: #CF0410;
+    font-size: 15px;
+}
+.article-list{
+    float: right;
+    width: 78%;
+}
+.article-list h3{
+    display: inline-block;
+    width: 80%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-size: 14px;
+}
+.article-list .date{
+    float: right;
+    color: rgb(145, 145, 145);
+    font-size: 13px;
+}
+.article-list li{
+    /* padding: 6px 0; */
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px dashed #CF0410;
+}
+.page-turn{
+    margin-top: 20px;
+}
+@media (max-width: 992px){
+    .aside{
+        width: 100%;
+    }
+    .article-list{
+        width: 100%;
+    }
+    .aside-body{
+        height: unset;
+    }
+}
+@media (max-width: 768px){
+    .article-list,.location{
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .article-list .date{
+        display: none;
+    }
+    .article-list h3{
+        width: 100%;
+    }
+    
+}

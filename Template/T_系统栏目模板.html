@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <stl:include file="@/include/header.html"></stl:include>
+    <link rel="stylesheet" href="{Stl.SiteUrl}/css/channels.css">
+    <title>CUC | {Channel.Title}</title>
+</head>
+<body>
+    <!-- 头部开始 -->
+    <stl:include file="@/include/nav.html"></stl:include>     
+    <!-- 头部结束 -->
+    <div class="page-content">
+        <!-- banner开始 -->
+        <!-- <stl:include file="@/include/banner.html"></stl:include>              -->
+        <!-- banner结束 -->
+        <div class="banner">
+            <div class="container position-rel">
+                <img src="{Stl.SiteUrl}/images/channel-back.jpg" alt="">
+            </div>
+        </div>
+        <div class="channel-list clearfloat">
+            <div class="container">
+                <div class="location"><stl:location> <span> > </span> </stl:location></div>
+                <div class="aside">
+                    <stl:if testType="CountOfChannels" testOperate="NotEquals" testValue="0">
+                        <stl:successTemplate>
+                            <div class="aside-head"><stl:channel type="Title"></stl:channel></div>
+                            <ul class="aside-body">
+                                <stl:channels channelIndex="{Channel.Title}">
+                                    <li>
+                                        <stl:a title="{Channel.Title}" >
+                                            <stl:channel type="Title"></stl:channel> 
+                                        </stl:a>
+                                    </li>
+                                </stl:channels>
+                            </ul>
+                        </stl:successTemplate>
+                        <stl:failureTemplate>
+                            <div class="aside-head"><stl:channel type="Title"></stl:channel></div>
+                            <ul class="aside-body"></ul>
+                        </stl:failureTemplate>
+                    </stl:if>
+                </div>
+                <div class="article-list">
+                    <ul>
+                        <stl:pageContents scope="All" order="AddDate" pageNum="12">
+                            <li><h3><stl:a target="_blank"><stl:content type="Title"></stl:content></stl:a></h3><span class="date"> <stl:content type="AddDate"></stl:content></span></li>                         
+                        </stl:pageContents>
+                    </ul>
+                    <div class="page-turn">
+                        <stl:pageItems>
+                            <table width="100%" cellpadding="10">
+                                <tr>
+                                    <td align="left">  
+                                        <stl:pageItem type="FirstPage" text="FirstPage"></stl:pageItem> |    
+                                        <stl:pageItem type="PreviousPage" text="PreviousPage"></stl:pageItem> |    
+                                        <stl:pageItem type="NextPage" text="NextPage"></stl:pageItem> |    
+                                        <stl:pageItem type="LastPage" text="LastPage"></stl:pageItem>  
+                                    </td>
+                                    <td align="right">  
+                                        <stl:pageItem type="CurrentPageIndex" text="CurrentPage:"></stl:pageItem>      
+                                        <stl:pageItem type="PageNavigation"></stl:pageItem>  
+                                    </td>
+                                </tr>
+                            </table>
+                        </stl:pageItems>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部开始 -->
+    <stl:include file="@/include/footer.html"></stl:include>                 
+    <!-- 底部结束 -->
+    <script>
+        $('.aside-head').on('click',function(){
+            $('.aside-body').stop().slideToggle(300);
+        });
+    </script>
+</body>
+</html>

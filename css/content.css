@@ -1,0 +1,44 @@
+.nav{
+    border: none;
+}
+.article{
+    border-top: 6px solid #CF0410;
+    color: #222222;
+}
+.location{
+    padding: 20px 0;
+    color: #414141;
+    font-size: 14px;
+}
+.article-content h2{
+    font-size: 27px;
+    padding: 20px;
+    text-align: center;
+    color: #222222;
+}
+.arts-date{
+    font-size: 17px;
+    display: block;
+}
+.hr{
+    display: inline-block;
+    /* height:2px; */
+    border:none;
+    border-top:6px solid #CF0410; 
+    width: 140px;
+    margin-top: 0px;
+}
+.article-content p{
+    font-size: 14px;
+    margin-top: 10px;
+}
+@media (max-width: 768px){
+    .article-content{
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .article-content h2{
+        padding: 0px;
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,41 @@
+<div class="banner">
+    <div class="container position-rel">
+        <ul class="banner-list">
+            <stl:contents channelIndex="轮播图" order="AddDate" totalNum="0">
+                <li>
+                    <stl:a title="{Content.Title}"><img class="imageCom" src="{Content.ImageUrl}" alt=""></stl:a> 
+                </li>
+            </stl:contents>
+        </ul>
+        <div class="prev"><img src="{Stl.SiteUrl}/images/左箭头.png" alt=""></div>
+        <div class="next"><img src="{Stl.SiteUrl}/images/右箭头.png" alt=""></div>
+        <ul class="banner-title">
+            <stl:contents channelIndex="轮播图" order="AddDate" totalNum="0">
+                <li>
+                    <stl:a title="{Content.Title}">
+                        <h3>{Content.Title}</h3>
+                        <span><stl:content type="AddDate" formatString="yyyy-MM-dd"></stl:content></span>
+                    </stl:a>
+                </li>
+            </stl:contents>
+        </ul> 
+        <ol class="selector">
+            <stl:contents channelIndex="轮播图" order="AddDate" totalNum="0"><li></li></stl:contents>
+        </ol>
+    </div>
+</div>
+<script>
+    //轮询图片是否加载完成
+    function imgLoad(img, callback) {
+        var timer = setInterval(function() {
+        if (img.complete) {
+        callback(img);
+        clearInterval(timer);
+        }
+        }, 50)
+    }
+    var imageCom = document.getElementsByClassName('imageCom')[0];
+    imgLoad(imageCom, function() {
+        whenLoad();
+    });
+</script>
